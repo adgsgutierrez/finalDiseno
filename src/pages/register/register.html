@@ -16,34 +16,29 @@
                     </ion-item>
                     <ion-item>
                         <ion-label floating>Nombres</ion-label>
-                        <ion-input type="text" [(ngModel)]="usuario.name"></ion-input>
+                        <ion-input type="text" [(ngModel)]="usuario.nombre"></ion-input>
                       </ion-item>
-                    
+
                       <ion-item>
                         <ion-label floating>Apellidos</ion-label>
-                        <ion-input type="text" [(ngModel)]="usuario.lastname"></ion-input>
+                        <ion-input type="text" [(ngModel)]="usuario.apellido"></ion-input>
                       </ion-item>
 
                       <ion-item>
                         <ion-label floating>Correo</ion-label>
-                        <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
+                        <ion-input type="text" [(ngModel)]="usuario.correo"></ion-input>
                       </ion-item>
-                      
+
                       <ion-item>
                           <ion-label floating>Usuario</ion-label>
-                          <ion-input type="text" [(ngModel)]="usuario.user"></ion-input>
+                          <ion-input type="text" [(ngModel)]="usuario.usuario"></ion-input>
                         </ion-item>
-                        
+
                       <ion-item>
                           <ion-label floating>Contraseña</ion-label>
-                          <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
+                          <ion-input type="password" [(ngModel)]="usuario.clave"></ion-input>
                         </ion-item>
-                        
-                      <ion-item>
-                          <ion-label floating>Recordar Contraseña</ion-label>
-                          <ion-input type="password" [(ngModel)]="usuario.forgotpassword"></ion-input>
-                        </ion-item>
-                      
+
                       <ion-item>
                         <button ion-button block  color="secondary" (click)="ingresar()">Ingresar</button>
                       </ion-item>
@@ -59,5 +54,5 @@
         <ion-col col-4></ion-col>
       </ion-row>
   </ion-grid>
-  
+
 </ion-content>

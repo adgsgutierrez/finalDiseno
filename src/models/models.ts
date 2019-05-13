@@ -1,14 +1,21 @@
 //Objetos DAO (Data Access Object)
 export interface userLogin {
-    user : string;  
+    user : string;
     password: string;
 }
 export interface userRegister {
-    name: string;
-    lastname: string;
-    email: string;
-    user : string;  
-    password: string;
-    forgotpassword: string;
+    apellido: string;
+    clave: string;
+    correo: string;
+    nombre : string;
+    tipo: string;
+    usuario: string;
 }
 
+export interface Profesional{
+  nombre : string ;
+  apellido : string ;
+  edad : string ;
+  experiencia : string ;
+  descripcion : string ;
+}

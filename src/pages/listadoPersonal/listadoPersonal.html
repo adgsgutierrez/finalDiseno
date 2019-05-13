@@ -8,11 +8,14 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-list *ngIf="!load">
+    <ion-item *ngFor="let item of profesionales">
+      <ion-avatar item-start>
+        <img src="https://clientea.com/media/avatar-7.png.pagespeed.ce.Jt7LtKXQj9.png">
+      </ion-avatar>
+      <h2>{{item.nombre}} {{item.apellido}} ({{item.edad}} años)</h2>
+      <p>{{item.experiencia}} años de experiencia</p>
+      <p>{{item.descripcion}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>
