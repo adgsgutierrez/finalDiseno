@@ -26,7 +26,7 @@ export class crearPersonalPage {
   public guardarProfesional():void{
     if(Utils.validateInputs(this.profesional)){
       this.service.setProfessional(this.profesional);
-      this.navCtrl.push(listadoPersonalPage);
+      this.navCtrl.setRoot(listadoPersonalPage);
     }else{
       const alert = this.alertCtrl.create({
         title: 'Ups!',

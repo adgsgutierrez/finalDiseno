@@ -1,4 +1,4 @@
-import { Profesional } from './../../models/models';
+import { Profesional, Venta } from './../../models/models';
 import { DATABASE } from './../constantes/constantes';
 
 import { Injectable } from '@angular/core';
@@ -30,4 +30,14 @@ export class ServicesProvider {
   public getProfessional():AngularFireList< Profesional >{
     return this.database.list(DATABASE.PROFFESSIONAL);
   }
+
+  public setVenta( venta : Venta ){
+    let database = this.database.list(DATABASE.VENTA);
+    database.push(venta);
+  }
+
+  public getVentas():AngularFireList< Venta >{
+    return this.database.list(DATABASE.VENTA);
+  }
 }
+

@@ -8,11 +8,16 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+    <ion-item>
+        <ion-label stacked>Valor de la venta</ion-label>
+        <ion-input [(ngModel)]="venta.valor" type="number"></ion-input>
+      </ion-item>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+      <ion-item>
+        <ion-label stacked>Descripcion de la venta</ion-label>
+        <ion-input [(ngModel)]="venta.descripcion" type="text"></ion-input>
+      </ion-item>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <button ion-button full color="primary" (click)="guardarVenta()">Crear Venta</button>
+
 </ion-content>

@@ -19,3 +19,9 @@ export interface Profesional{
   experiencia : string ;
   descripcion : string ;
 }
+
+export interface Venta {
+  valor : number,
+  descripcion : string,
+  fecha : string
+}

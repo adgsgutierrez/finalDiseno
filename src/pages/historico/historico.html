@@ -8,11 +8,14 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-list *ngIf="!load">
+        <ion-item *ngFor="let item of ventas">
+          <ion-avatar item-start>
+            <img src="http://www.golfgeardirect.co.uk/images/page/top-nav-l1-sale-1%20(1).png">
+          </ion-avatar>
+          <h2>$ {{item.valor | number}}</h2>
+          <p>{{item.fecha}}</p>
+          <p>{{item.descripcion}}</p>
+        </ion-item>
+      </ion-list>
 </ion-content>
