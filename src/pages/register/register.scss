@@ -1,0 +1,31 @@
+page-register {
+
+    .scroll-content{
+        background: map-get($map: $colors , $key: primary);
+    }
+
+    .card{
+        border-radius: 20px;
+        margin-top: 3em;
+        padding: 10px;
+    }
+    
+    p{
+        margin-top: 5rem !important;
+        font-size: 3.2em !important;
+        text-align: center !important;
+        font-weight: 400 !important;
+        color: black !important;
+    }
+    ion-icon{
+        font-size: 5rem;
+        margin-left: 45%;
+        color: map-get($map: $colors , $key: secondary);
+    }
+
+    .item-button {
+        padding: 0 0.6em;
+        height: 35px !important;
+        font-size: 1.4rem !important;
+    }
+}

@@ -1,0 +1,63 @@
+
+
+<ion-content>
+
+  <ion-grid>
+      <ion-row>
+          <ion-col col-4></ion-col>
+        <ion-col col-4>
+            <ion-card>
+                <ion-list>
+                    <ion-item>
+                        <p>Registro</p>
+                      </ion-item>
+                    <ion-item>
+                        <ion-icon name="md-star"></ion-icon>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>Nombres</ion-label>
+                        <ion-input type="text" [(ngModel)]="usuario.name"></ion-input>
+                      </ion-item>
+                    
+                      <ion-item>
+                        <ion-label floating>Apellidos</ion-label>
+                        <ion-input type="text" [(ngModel)]="usuario.lastname"></ion-input>
+                      </ion-item>
+
+                      <ion-item>
+                        <ion-label floating>Correo</ion-label>
+                        <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
+                      </ion-item>
+                      
+                      <ion-item>
+                          <ion-label floating>Usuario</ion-label>
+                          <ion-input type="text" [(ngModel)]="usuario.user"></ion-input>
+                        </ion-item>
+                        
+                      <ion-item>
+                          <ion-label floating>Contraseña</ion-label>
+                          <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
+                        </ion-item>
+                        
+                      <ion-item>
+                          <ion-label floating>Recordar Contraseña</ion-label>
+                          <ion-input type="password" [(ngModel)]="usuario.forgotpassword"></ion-input>
+                        </ion-item>
+                      
+                      <ion-item>
+                        <button ion-button block  color="secondary" (click)="ingresar()">Ingresar</button>
+                      </ion-item>
+                      <ion-item>
+                          <button ion-button clear color="secondary" (click)="login()">Iniciar Sesion</button>
+                        </ion-item>
+                      <ion-item>
+                         <h2></h2>
+                        </ion-item>
+                </ion-list>
+            </ion-card>
+        </ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+  </ion-grid>
+  
+</ion-content>

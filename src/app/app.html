@@ -1,0 +1,34 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-item-group>
+      <ion-item-divider color="secondary">Pedidos</ion-item-divider>
+      <ion-item  menuClose (click)="openPage(0)">Revisión de Pedidos</ion-item>
+      <ion-item  menuClose (click)="openPage(1)">Asignación de Personal</ion-item>
+    </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="secondary">Asignados</ion-item-divider>
+    <ion-item  menuClose (click)="openPage(2)">Visualizar Agenda</ion-item>
+    <ion-item  menuClose (click)="openPage(3)">Reasignar Agenda</ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="secondary">Ventas</ion-item-divider>
+    <ion-item  menuClose (click)="openPage(4)">Histórico</ion-item>
+    <ion-item  menuClose (click)="openPage(5)">Crear Venta</ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="secondary">Personal</ion-item-divider>
+    <ion-item  menuClose (click)="openPage(6)">Crear Personal</ion-item>
+    <ion-item  menuClose (click)="openPage(7)">Listado de personal</ion-item>
+  </ion-item-group>
+
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
