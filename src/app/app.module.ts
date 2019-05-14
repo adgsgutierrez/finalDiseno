@@ -17,6 +17,7 @@ import { historicoPage } from '../pages/historico/historico';
 import { crearVentaPage } from '../pages/crearVenta/crearVenta';
 import { crearPersonalPage } from '../pages/crearPersonal/crearPersonal';
 import { listadoPersonalPage } from '../pages/listadoPersonal/listadoPersonal';
+import { editarPersonalModal } from '../pages/editarPersonal/editarPersonal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,7 +39,8 @@ import { ENVIROMENT } from '../providers/constantes/constantes';
     historicoPage,
     crearVentaPage,
     crearPersonalPage,
-    listadoPersonalPage
+    listadoPersonalPage,
+    editarPersonalModal
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { ENVIROMENT } from '../providers/constantes/constantes';
     historicoPage,
     crearVentaPage,
     crearPersonalPage,
-    listadoPersonalPage
+    listadoPersonalPage,
+    editarPersonalModal
   ],
   providers: [
     StatusBar,

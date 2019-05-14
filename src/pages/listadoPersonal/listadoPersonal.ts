@@ -1,7 +1,8 @@
 import { ServicesProvider } from './../../providers/services/services';
 import { Profesional } from './../../models/models';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
+import { editarPersonalModal } from '../editarPersonal/editarPersonal';
 
 @Component({
   selector: 'page-listadoPersonal',
@@ -12,7 +13,7 @@ export class listadoPersonalPage {
   private profesionales : Profesional[] = [];
   private load : boolean = false;
 
-  constructor(public navCtrl: NavController , private service : ServicesProvider) {
+  constructor(public navCtrl: NavController , private service : ServicesProvider , public modalCtrl: ModalController) {
 
   }
 
@@ -22,6 +23,21 @@ export class listadoPersonalPage {
       (professionals)=>{
         this.profesionales = professionals;
         this.load = false;
+      }
+    );
+  }
+
+  public eliminar(profesional : Profesional):void{
+    this.service.delecteProfesional(profesional);
+  }
+
+  public editar(profesional : Profesional){
+    let profileModal = this.modalCtrl.create(editarPersonalModal, { "profesional": profesional });
+    profileModal.present();
+    profileModal.onDidDismiss(
+      (profesional)=>{
+        console.log(profesional);
+        this.service.updateProfesional(profesional);
       }
     );
   }

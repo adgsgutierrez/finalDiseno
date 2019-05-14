@@ -1,34 +1,26 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, NavParams, ViewController } from 'ionic-angular';
 import { Profesional } from '../../models/models';
 import { Utils } from '../../utils/utils';
 import { ServicesProvider } from '../../providers/services/services';
 import { listadoPersonalPage } from '../listadoPersonal/listadoPersonal';
 
 @Component({
-  selector: 'page-crearPersonal',
-  templateUrl: 'crearPersonal.html'
+  selector: 'page-editarPersonal',
+  templateUrl: 'editarPersonal.html'
 })
-export class crearPersonalPage {
+export class editarPersonalModal {
 
   private profesional : Profesional ;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private service: ServicesProvider) {
-    const id = new Date().getTime();
-    this.profesional = {
-      id : ''+id,
-      nombre : '',
-      apellido : '',
-      edad : '',
-      experiencia : '',
-      descripcion : ''
-    }
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private service: ServicesProvider ,
+    params: NavParams , public viewCtrl: ViewController) {
+    this.profesional = params.get('profesional');
   }
 
   public guardarProfesional():void{
     if(Utils.validateInputs(this.profesional)){
-      this.service.setProfessional(this.profesional);
-      this.navCtrl.setRoot(listadoPersonalPage);
+      this.viewCtrl.dismiss(this.profesional);
     }else{
       const alert = this.alertCtrl.create({
         title: 'Ups!',

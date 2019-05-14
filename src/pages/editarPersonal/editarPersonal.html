@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Crear Personal</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Nombre del Profesional</ion-label>
+      <ion-input [(ngModel)]="profesional.nombre" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Apellido del Profesional</ion-label>
+      <ion-input [(ngModel)]="profesional.apellido" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Edad del profesional</ion-label>
+      <ion-input [(ngModel)]="profesional.edad" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Años de experiencia del profesional</ion-label>
+      <ion-input [(ngModel)]="profesional.experiencia" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Descripción del Profesional</ion-label>
+      <ion-input [(ngModel)]="profesional.descripcion" type="text"></ion-input>
+    </ion-item>
+
+    <button ion-button full color="primary" (click)="guardarProfesional()">Guardar</button>
+
+  </ion-list>
+</ion-content>

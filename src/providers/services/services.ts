@@ -18,10 +18,23 @@ export class ServicesProvider {
     return this.database.list(DATABASE.USERS , ref => ref.orderByChild('usuario').equalTo(user));
   }
   public setProfessional( profesional : Profesional ){
-    let database = this.database.list(DATABASE.PROFFESSIONAL);
+    let database: AngularFireList< Profesional > = this.database.list(DATABASE.PROFFESSIONAL);
     database.push(profesional);
   }
-
+  public delecteProfesional(profesional : Profesional){
+    this.database.list(DATABASE.PROFFESSIONAL , ref => ref.orderByChild('id').equalTo(profesional.id)).snapshotChanges().subscribe(snapshots=>{
+        snapshots.forEach(snapshot => {
+          this.database.list(DATABASE.PROFFESSIONAL + '/'+snapshot.key).remove();
+        });
+    });
+  }
+  public updateProfesional(profesional : Profesional){
+    this.database.list(DATABASE.PROFFESSIONAL , ref => ref.orderByChild('id').equalTo(profesional.id)).snapshotChanges().subscribe(snapshots=>{
+      snapshots.forEach(snapshot => {
+        this.database.list(DATABASE.PROFFESSIONAL ).update(snapshot.key ,profesional);
+      });
+  });
+  }
   public setUsuario( user : userRegister ){
     let database = this.database.list(DATABASE.USERS);
     database.push(user);
@@ -39,5 +52,6 @@ export class ServicesProvider {
   public getVentas():AngularFireList< Venta >{
     return this.database.list(DATABASE.VENTA);
   }
+
 }
 
