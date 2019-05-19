@@ -13,5 +13,6 @@ export const DATABASE = {
   USERS : 'usuarios',
   PROFFESSIONAL : 'profesionales',
   VENTA : 'ventas',
-  RESERVACION : 'reservaciones'
+  RESERVACION : 'reservaciones',
+  SERVICIO : 'servicios'
 }

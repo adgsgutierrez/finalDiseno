@@ -9,13 +9,13 @@
 
 <ion-content padding>
   <ion-list *ngIf="!load">
-    <ion-item *ngFor="let item of profesionales">
+    <ion-item *ngFor="let item of servicios">
       <ion-avatar item-start>
-        <img src="https://clientea.com/media/avatar-7.png.pagespeed.ce.Jt7LtKXQj9.png">
+        <img src="https://www.fasaworld.es/blog/wp-content/uploads/2016/11/tijeras-tipos.jpg">
       </ion-avatar>
-      <h2>{{item.nombre}} {{item.apellido}} ({{item.edad}} años)</h2>
-      <p>{{item.experiencia}} años de experiencia</p>
-      <p>{{item.descripcion}}</p>
+      <h2>{{item.nombre}}</h2>
+      <p>{{item.precio | currency}} </p>
+      <p>{{item.tiempo}} minutos</p>
       <ion-avatar item-end>
           <button ion-button icon-only clear (click)="editar(item)">
               <ion-icon name="md-create"></ion-icon>

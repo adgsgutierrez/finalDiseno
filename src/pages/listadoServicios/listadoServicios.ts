@@ -1,3 +1,4 @@
+import { Servicio } from './../../models/models';
 import { ServicesProvider } from '../../providers/services/services';
 import { Profesional } from '../../models/models';
 import { Component } from '@angular/core';
@@ -10,7 +11,7 @@ import { editarPersonalModal } from '../editarPersonal/editarPersonal';
 })
 export class listadoServiciosPage {
 
-  private profesionales : Profesional[] = [];
+  private servicios : Servicio[] = [];
   private load : boolean = false;
 
   constructor(public navCtrl: NavController , private service : ServicesProvider , public modalCtrl: ModalController) {
@@ -19,27 +20,27 @@ export class listadoServiciosPage {
 
   ionViewDidEnter(){
    this.load = true;
-    this.service.getProfessional().valueChanges().subscribe(
-      (professionals)=>{
-        this.profesionales = professionals;
+    this.service.getServicios().valueChanges().subscribe(
+      (servicios)=>{
+        this.servicios = servicios;
         this.load = false;
       }
     );
   }
 
-  public eliminar(profesional : Profesional):void{
-    this.service.delecteProfesional(profesional);
-  }
+  // public eliminar(profesional : Profesional):void{
+  //   this.service.delecteProfesional(profesional);
+  // }
 
-  public editar(profesional : Profesional){
-    let profileModal = this.modalCtrl.create(editarPersonalModal, { "profesional": profesional });
-    profileModal.present();
-    profileModal.onDidDismiss(
-      (profesional)=>{
-        console.log(profesional);
-        this.service.updateProfesional(profesional);
-      }
-    );
-  }
+  // public editar(profesional : Profesional){
+  //   let profileModal = this.modalCtrl.create(editarPersonalModal, { "profesional": profesional });
+  //   profileModal.present();
+  //   profileModal.onDidDismiss(
+  //     (profesional)=>{
+  //       console.log(profesional);
+  //       this.service.updateProfesional(profesional);
+  //     }
+  //   );
+  // }
 
 }

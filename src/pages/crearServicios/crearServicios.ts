@@ -1,9 +1,9 @@
+import { listadoServiciosPage } from './../listadoServicios/listadoServicios';
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Servicio } from '../../models/models';
-//import { Utils } from '../../utils/utils';
 import { ServicesProvider } from '../../providers/services/services';
-//import { listadoServiciosPage } from '../listadoServicios/listadoServicios';
+import { Utils } from '../../utils/utils';
 
 @Component({
   selector: 'page-crearServicios',
@@ -23,17 +23,17 @@ export class crearServiciosPage {
 
   public guardarProfesional():void{
     console.log(this.servicio);
-  //   if(Utils.validateInputs(this.servicio)){
-  //     this.service.setProfessional(this.servicio);
-  //     this.navCtrl.setRoot(listadoServiciosPage);
-  //   }else{
-  //     const alert = this.alertCtrl.create({
-  //       title: 'Ups!',
-  //       subTitle: 'Te hizo falta información, completala para continuar.',
-  //       buttons: ['OK']
-  //     });
-  //     alert.present();
-  //   }
+    if(Utils.validateInputs(this.servicio)){
+      this.service.setService(this.servicio);
+      this.navCtrl.setRoot(listadoServiciosPage);
+    }else{
+      const alert = this.alertCtrl.create({
+        title: 'Ups!',
+        subTitle: 'Te hizo falta información, completala para continuar.',
+        buttons: ['OK']
+      });
+      alert.present();
+    }
   }
 
 }

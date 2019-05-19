@@ -1,4 +1,4 @@
-import { Profesional, Venta, Calendario } from './../../models/models';
+import { Profesional, Venta, Calendario, Servicio } from './../../models/models';
 import { DATABASE } from './../constantes/constantes';
 
 import { Injectable } from '@angular/core';
@@ -55,6 +55,15 @@ export class ServicesProvider {
 
   public getSearchServiceToDate( fecha : string ):AngularFireList< Calendario >{
     return this.database.list(DATABASE.RESERVACION , ref => ref.orderByChild('date').equalTo(fecha));
+  }
+
+  public setService( servicio : Servicio ){
+    let database = this.database.list(DATABASE.SERVICIO);
+    database.push(servicio);
+  }
+
+  public getServicios():AngularFireList< Servicio >{
+    return this.database.list(DATABASE.SERVICIO);
   }
 
 }
