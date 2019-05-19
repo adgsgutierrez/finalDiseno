@@ -26,3 +26,9 @@ export interface Venta {
   descripcion : string,
   fecha : string
 }
+
+export interface Servicio{
+  nombre : string;
+  precio : number;
+  tiempo : string;
+}

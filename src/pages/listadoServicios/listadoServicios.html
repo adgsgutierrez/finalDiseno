@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Listado de Servicios</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="!load">
+    <ion-item *ngFor="let item of profesionales">
+      <ion-avatar item-start>
+        <img src="https://clientea.com/media/avatar-7.png.pagespeed.ce.Jt7LtKXQj9.png">
+      </ion-avatar>
+      <h2>{{item.nombre}} {{item.apellido}} ({{item.edad}} años)</h2>
+      <p>{{item.experiencia}} años de experiencia</p>
+      <p>{{item.descripcion}}</p>
+      <ion-avatar item-end>
+          <button ion-button icon-only clear (click)="editar(item)">
+              <ion-icon name="md-create"></ion-icon>
+            </button>
+        <button ion-button icon-only clear (click)="eliminar(item)">
+          <ion-icon name="md-trash"></ion-icon>
+        </button>
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+</ion-content>

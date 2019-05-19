@@ -19,6 +19,8 @@ import { crearVentaPage } from '../pages/crearVenta/crearVenta';
 import { crearPersonalPage } from '../pages/crearPersonal/crearPersonal';
 import { listadoPersonalPage } from '../pages/listadoPersonal/listadoPersonal';
 import { editarPersonalModal } from '../pages/editarPersonal/editarPersonal';
+import { crearServiciosPage } from '../pages/crearServicios/crearServicios';
+import { listadoServiciosPage } from '../pages/listadoServicios/listadoServicios';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -41,7 +43,9 @@ import { ENVIROMENT } from '../providers/constantes/constantes';
     crearVentaPage,
     crearPersonalPage,
     listadoPersonalPage,
-    editarPersonalModal
+    editarPersonalModal,
+    crearServiciosPage,
+    listadoServiciosPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,9 @@ import { ENVIROMENT } from '../providers/constantes/constantes';
     crearVentaPage,
     crearPersonalPage,
     listadoPersonalPage,
-    editarPersonalModal
+    editarPersonalModal,
+    crearServiciosPage,
+    listadoServiciosPage
   ],
   providers: [
     StatusBar,

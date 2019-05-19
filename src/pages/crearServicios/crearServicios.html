@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Crear Servicios</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Nombre del Servicio</ion-label>
+      <ion-input [(ngModel)]="servicio.nombre" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Precio del Servicio</ion-label>
+      <ion-input [(ngModel)]="servicio.precio" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Tiempo de duracion</ion-label>
+      <ion-input [(ngModel)]="servicio.tiempo" type="number"></ion-input>
+    </ion-item>
+
+
+    <button ion-button full color="primary" (click)="guardarProfesional()">Crear</button>
+
+  </ion-list>
+</ion-content>

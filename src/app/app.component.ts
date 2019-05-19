@@ -11,6 +11,9 @@ import { historicoPage } from '../pages/historico/historico';
 import { crearVentaPage } from '../pages/crearVenta/crearVenta';
 import { crearPersonalPage } from '../pages/crearPersonal/crearPersonal';
 import { listadoPersonalPage } from '../pages/listadoPersonal/listadoPersonal';
+import { crearServiciosPage } from '../pages/crearServicios/crearServicios';
+import { listadoServiciosPage } from '../pages/listadoServicios/listadoServicios';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -35,8 +38,8 @@ export class MyApp {
       { title: 'Crear Venta', component: crearVentaPage},
       { title: 'Crear Personal', component: crearPersonalPage},
       { title: 'Listado de Personal', component: listadoPersonalPage},
-      { title: 'Crear Personal', component: crearPersonalPage},
-      { title: 'Listado de Personal', component: listadoPersonalPage}
+      { title: 'Crear Servicios', component: crearServiciosPage},
+      { title: 'Listado de Servicios', component: listadoServiciosPage}
     ];
 
   }
