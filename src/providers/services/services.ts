@@ -35,6 +35,20 @@ export class ServicesProvider {
       });
   });
   }
+  public delecteServicio(profesional : Servicio){
+    this.database.list(DATABASE.PROFFESSIONAL , ref => ref.orderByChild('id').equalTo(profesional.id)).snapshotChanges().subscribe(snapshots=>{
+        snapshots.forEach(snapshot => {
+          this.database.list(DATABASE.PROFFESSIONAL + '/'+snapshot.key).remove();
+        });
+    });
+  }
+  public updateServicio(profesional : Servicio){
+    this.database.list(DATABASE.PROFFESSIONAL , ref => ref.orderByChild('id').equalTo(profesional.id)).snapshotChanges().subscribe(snapshots=>{
+      snapshots.forEach(snapshot => {
+        this.database.list(DATABASE.PROFFESSIONAL ).update(snapshot.key ,profesional);
+      });
+  });
+  }
   public setUsuario( user : userRegister ){
     let database = this.database.list(DATABASE.USERS);
     database.push(user);

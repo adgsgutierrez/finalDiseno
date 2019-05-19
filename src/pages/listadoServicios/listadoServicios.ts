@@ -28,8 +28,8 @@ export class listadoServiciosPage {
     );
   }
 
-  public eliminar(profesional : Profesional):void{
-    this.service.delecteProfesional(profesional);
+  public eliminar(servicios : Servicio):void{
+    this.service.delecteProfesional(servicios);
   }
 
   public editar(profesional : Profesional){
