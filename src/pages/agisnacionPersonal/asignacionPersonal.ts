@@ -2,7 +2,7 @@ import { ServicesProvider } from './../../providers/services/services';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
-import { DatePickerProvider } from 'ionic2-date-picker';
+import { DatePickerProvider, DatePickerOption } from 'ionic2-date-picker';
 import { Calendario, Reservacion } from '../../models/models';
 
 @Component({
@@ -21,7 +21,12 @@ export class asignacionPersonalPage {
   }
 
   private showCalendar():void{
-    const dateSelected = this.datePickerProvider.showCalendar(this.modalCtrl);
+    let datePickerOption: DatePickerOption = {
+      minimumDate: new Date(), // the minimum date selectable
+      maximumDate: new Date('2100-12-31'), // the maximum date selectable
+      defaultDate: new Date(),
+    };
+    const dateSelected = this.datePickerProvider.showCalendar(this.modalCtrl, datePickerOption);
     dateSelected.subscribe((date : Date) =>{
       const dateString : string = date.getUTCFullYear() + "/" + ( (date.getMonth()>9)?date.getMonth():"0"+date.getMonth() ) + "/"+ ( (date.getDay()>9)?date.getDay():"0"+date.getDay());
       this.service.getSearchServiceToDate(dateString).valueChanges().subscribe(
