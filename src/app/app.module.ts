@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { DatePickerModule } from 'ionic2-date-picker';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
@@ -45,6 +46,7 @@ import { ENVIROMENT } from '../providers/constantes/constantes';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    DatePickerModule,
     AngularFireModule.initializeApp( ENVIROMENT ,'Mystyle'),
     AngularFireDatabaseModule
   ],
