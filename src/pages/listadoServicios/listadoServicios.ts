@@ -28,19 +28,19 @@ export class listadoServiciosPage {
     );
   }
 
-  // public eliminar(profesional : Profesional):void{
-  //   this.service.delecteProfesional(profesional);
-  // }
+  public eliminar(profesional : Profesional):void{
+    this.service.delecteProfesional(profesional);
+  }
 
-  // public editar(profesional : Profesional){
-  //   let profileModal = this.modalCtrl.create(editarPersonalModal, { "profesional": profesional });
-  //   profileModal.present();
-  //   profileModal.onDidDismiss(
-  //     (profesional)=>{
-  //       console.log(profesional);
-  //       this.service.updateProfesional(profesional);
-  //     }
-  //   );
-  // }
+  public editar(profesional : Profesional){
+    let profileModal = this.modalCtrl.create(editarPersonalModal, { "profesional": profesional });
+    profileModal.present();
+    profileModal.onDidDismiss(
+      (profesional)=>{
+        console.log(profesional);
+        this.service.updateProfesional(profesional);
+      }
+    );
+  }
 
 }
