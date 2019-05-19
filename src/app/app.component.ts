@@ -6,7 +6,7 @@ import { LoginPage } from '../pages/login/login';
 import {revisionPedidosPage } from '../pages/revisionPedidos/revisionPedidos';
 import { asignacionPersonalPage } from '../pages/agisnacionPersonal/asignacionPersonal';
 import { visualizarAgendaPage} from '../pages/visualizarAgenda/visualizarAgenda';
-import { reasignarAgendaPage } from '../pages/reasignarAgenda/reasignarAgenda'; 
+import { reasignarAgendaPage } from '../pages/reasignarAgenda/reasignarAgenda';
 import { historicoPage } from '../pages/historico/historico';
 import { crearVentaPage } from '../pages/crearVenta/crearVenta';
 import { crearPersonalPage } from '../pages/crearPersonal/crearPersonal';
@@ -33,6 +33,8 @@ export class MyApp {
       { title: 'Reasignar agenda', component: reasignarAgendaPage},
       { title: 'Historico', component: historicoPage},
       { title: 'Crear Venta', component: crearVentaPage},
+      { title: 'Crear Personal', component: crearPersonalPage},
+      { title: 'Listado de Personal', component: listadoPersonalPage},
       { title: 'Crear Personal', component: crearPersonalPage},
       { title: 'Listado de Personal', component: listadoPersonalPage}
     ];
