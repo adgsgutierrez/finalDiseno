@@ -8,8 +8,26 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <!-- <h3>Itinerario</h3> -->
 
-
-  <button ion-button secondary (click)="showCalendar()" >Toggle Menu</button>
+  <ion-grid>
+    <ion-row padding>
+      <ion-col col-2><strong>Hora</strong></ion-col>
+      <ion-col col-10><strong>Profesional Asignado</strong></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of servicios">
+      <ion-col col-2 text-center><strong>{{item.hora}}</strong></ion-col>
+      <ion-col col-10>
+        <ion-list>
+          <ion-item *ngFor="let aux of item.professional">
+            <ion-avatar item-start>
+              <img src="https://clientea.com/media/avatar-7.png.pagespeed.ce.Jt7LtKXQj9.png">
+            </ion-avatar>
+            <h2>{{aux.nombre}}</h2>
+            <p>{{aux.servicio}}</p>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

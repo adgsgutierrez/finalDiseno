@@ -1,3 +1,9 @@
 page-asignacionPersonal {
-
+  ion-row:nth-child(odd){
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the EVEN background rows  */
+	ion-row:nth-child(even){
+		background: #dae5f4;
+	}
 }

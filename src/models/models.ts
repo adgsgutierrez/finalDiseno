@@ -32,3 +32,16 @@ export interface Servicio{
   precio : number;
   tiempo : string;
 }
+
+export interface Reservacion{
+  nombre : string ;
+  servicio : string ;
+
+}
+
+export interface Calendario{
+  date : string ;
+  hora : string ;
+  professional : Array<Reservacion>;
+
+}

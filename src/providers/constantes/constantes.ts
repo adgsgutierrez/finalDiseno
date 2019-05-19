@@ -12,5 +12,6 @@ export const ENVIROMENT = {
 export const DATABASE = {
   USERS : 'usuarios',
   PROFFESSIONAL : 'profesionales',
-  VENTA : 'ventas'
+  VENTA : 'ventas',
+  RESERVACION : 'reservaciones'
 }
