@@ -21,7 +21,7 @@ export class crearServiciosPage {
     }
   }
 
-  public guardarProfesional():void{
+  public guardarServicio():void{
     console.log(this.servicio);
     if(Utils.validateInputs(this.servicio)){
       this.service.setService(this.servicio);
