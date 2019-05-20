@@ -8,14 +8,14 @@
   <ion-content>
     <ion-item-group>
       <ion-item-divider color="secondary">Pedidos</ion-item-divider>
-      <ion-item  menuClose (click)="openPage(0)">Revisión de Pedidos</ion-item>
+      <!-- <ion-item  menuClose (click)="openPage(0)">Revisión de Pedidos</ion-item> -->
       <ion-item  menuClose (click)="openPage(1)">Asignación de Personal</ion-item>
     </ion-item-group>
-  <ion-item-group>
+  <!-- <ion-item-group>
     <ion-item-divider color="secondary">Asignados</ion-item-divider>
     <ion-item  menuClose (click)="openPage(2)">Visualizar Agenda</ion-item>
     <ion-item  menuClose (click)="openPage(3)">Reasignar Agenda</ion-item>
-  </ion-item-group>
+  </ion-item-group> -->
   <ion-item-group>
     <ion-item-divider color="secondary">Ventas</ion-item-divider>
     <ion-item  menuClose (click)="openPage(4)">Histórico</ion-item>
@@ -31,7 +31,10 @@
     <ion-item  menuClose (click)="openPage(8)">Crear Servicios</ion-item>
     <ion-item  menuClose (click)="openPage(9)">Listado de servicios</ion-item>
   </ion-item-group>
-
+  <ion-item-group>
+    <ion-item-divider color="secondary">Salir</ion-item-divider>
+    <ion-item  menuClose (click)="openPage(10)">Cerrar Sesión</ion-item>
+  </ion-item-group>
   </ion-content>
 </ion-menu>
 

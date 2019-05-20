@@ -35,17 +35,17 @@ export class ServicesProvider {
       });
   });
   }
-  public delecteServicio(profesional : Servicio){
-    this.database.list(DATABASE.PROFFESSIONAL , ref => ref.orderByChild('id').equalTo(profesional.id)).snapshotChanges().subscribe(snapshots=>{
+  public deleteServicio(servicio : Servicio){
+    this.database.list(DATABASE.SERVICIO , ref => ref.orderByChild('nombre').equalTo(servicio.nombre)).snapshotChanges().subscribe(snapshots=>{
         snapshots.forEach(snapshot => {
-          this.database.list(DATABASE.PROFFESSIONAL + '/'+snapshot.key).remove();
+          this.database.list(DATABASE.SERVICIO + '/'+snapshot.key).remove();
         });
     });
   }
-  public updateServicio(profesional : Servicio){
-    this.database.list(DATABASE.PROFFESSIONAL , ref => ref.orderByChild('id').equalTo(profesional.id)).snapshotChanges().subscribe(snapshots=>{
+  public updateServicio(servicio : Servicio){
+    this.database.list(DATABASE.SERVICIO , ref => ref.orderByChild('nombre').equalTo(servicio.nombre)).snapshotChanges().subscribe(snapshots=>{
       snapshots.forEach(snapshot => {
-        this.database.list(DATABASE.PROFFESSIONAL ).update(snapshot.key ,profesional);
+        this.database.list(DATABASE.SERVICIO ).update(snapshot.key ,servicio);
       });
   });
   }
@@ -78,6 +78,11 @@ export class ServicesProvider {
 
   public getServicios():AngularFireList< Servicio >{
     return this.database.list(DATABASE.SERVICIO);
+  }
+
+  public setCalendar(calendar:Calendario):void{
+    let database = this.database.list(DATABASE.RESERVACION);
+    database.push(calendar);
   }
 
 }

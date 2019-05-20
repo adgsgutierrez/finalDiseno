@@ -28,7 +28,7 @@ export class asignacionPersonalPage {
     };
     const dateSelected = this.datePickerProvider.showCalendar(this.modalCtrl, datePickerOption);
     dateSelected.subscribe((date : Date) =>{
-      const dateString : string = date.getUTCFullYear() + "/" + ( (date.getMonth()>9)?date.getMonth():"0"+date.getMonth() ) + "/"+ ( (date.getDay()>9)?date.getDay():"0"+date.getDay());
+      const dateString : string = date.getUTCFullYear() + "/" + ( ( (date.getMonth()+1)>9)?(date.getMonth()+1):"0"+(date.getMonth()+1) ) + "/"+ ( (date.getDate()>9)?date.getDate():"0"+date.getDate());
       this.service.getSearchServiceToDate(dateString).valueChanges().subscribe(
         (services)=>{
           console.log(services);
@@ -41,9 +41,12 @@ export class asignacionPersonalPage {
   private loadInfo(servicio : Calendario[]):void{
     for(let index = 0 ; index < 13 ; index ++){
         const hora = ((index + 8) < 10)?('0'+(index + 8)+':00'):(index + 8)+':00';
-        const filter : any[] = servicio.filter((item : Calendario) => {
-          return (item.hora.indexOf(hora) > -1)?item.professional:[]
-        });
+        let filter = [];
+        for(let aux = 0 ; aux < servicio.length ; aux++){
+          if(servicio[aux].hora === hora){
+            filter = servicio[aux].professional;
+          }
+        }
         this.servicios.push({
           hora : hora,
           date : '',

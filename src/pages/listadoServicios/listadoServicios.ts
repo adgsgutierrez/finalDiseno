@@ -1,3 +1,4 @@
+import { editarServicioModal } from './../editarServicio/editarServicio';
 import { Servicio } from './../../models/models';
 import { ServicesProvider } from '../../providers/services/services';
 import { Profesional } from '../../models/models';
@@ -28,17 +29,19 @@ export class listadoServiciosPage {
     );
   }
 
-  public eliminar(servicios : Servicio):void{
-    this.service.delecteProfesional(servicios);
+  public eliminar(servicio : Servicio):void{
+    this.service.deleteServicio(servicio);
   }
 
-  public editar(profesional : Profesional){
-    let profileModal = this.modalCtrl.create(editarPersonalModal, { "profesional": profesional });
+  public editar(servicio : Servicio){
+    let profileModal = this.modalCtrl.create(editarServicioModal, { "servicio": servicio });
     profileModal.present();
     profileModal.onDidDismiss(
-      (profesional)=>{
-        console.log(profesional);
-        this.service.updateProfesional(profesional);
+      (servicio)=>{
+        console.log(servicio);
+        if(servicio != null){
+        this.service.updateServicio(servicio);
+        }
       }
     );
   }

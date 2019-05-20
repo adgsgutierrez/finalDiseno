@@ -37,7 +37,9 @@ export class listadoPersonalPage {
     profileModal.onDidDismiss(
       (profesional)=>{
         console.log(profesional);
+        if(profesional != null){
         this.service.updateProfesional(profesional);
+        }
       }
     );
   }

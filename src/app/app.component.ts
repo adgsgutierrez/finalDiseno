@@ -39,7 +39,8 @@ export class MyApp {
       { title: 'Crear Personal', component: crearPersonalPage},
       { title: 'Listado de Personal', component: listadoPersonalPage},
       { title: 'Crear Servicios', component: crearServiciosPage},
-      { title: 'Listado de Servicios', component: listadoServiciosPage}
+      { title: 'Listado de Servicios', component: listadoServiciosPage},
+      { title: 'Listado de Servicios', component: LoginPage}
     ];
 
   }

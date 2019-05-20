@@ -1,23 +1,51 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>List</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Reservar Servicio</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="cerrarSession()">
+        <ion-icon name="md-power"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+<ion-content padding>
+  <ion-slides>
+    <ion-slide>
+      <!-- Listado de Servicios -->
+      <h1>Selecciona un servicio</h1>
+      <ion-list inset>
+        <button ion-item *ngFor="let item of servicios" (click)="itemService(item)" item-end full icon-end >
+          {{ item.nombre }} - <strong>{{item.precio | currency}}</strong> - {{item.tiempo}} minutos
+          <ion-icon style="position: absolute; right: 0;" name="ios-arrow-forward"></ion-icon>
+        </button>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <!-- Profesionales  -->
+      <h1>Selecciona un profesional</h1>
+      <ion-list inset>
+        <ion-item *ngFor="let item of profesionales" (click)="itemProfesional(item)">
+          <ion-avatar item-start>
+            <img src="https://clientea.com/media/avatar-7.png.pagespeed.ce.Jt7LtKXQj9.png">
+          </ion-avatar>
+          <h2>{{item.nombre}} {{item.apellido}} ({{item.edad}} años)</h2>
+          <p>{{item.experiencia}} años de experiencia</p>
+          <p>{{item.descripcion}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <!-- Dia y hora -->
+      <h1>Selecciona una hora</h1>
+      <ion-list inset>
+          <button ion-item *ngFor="let item of horas" (click)="itemSelectService(item)" item-end full icon-end [disabled]="item.professional.length > 0">
+            {{ item.hora }}
+            <a *ngIf="item.professional.length === 0">Hora disponible</a>
+            <a *ngIf="item.professional.length > 0">Hora reservada</a>
+            <ion-icon style="position: absolute; right: 0;" name="ios-arrow-forward"></ion-icon>
+          </button>
+        </ion-list>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

@@ -22,10 +22,12 @@ import { editarPersonalModal } from '../pages/editarPersonal/editarPersonal';
 import { crearServiciosPage } from '../pages/crearServicios/crearServicios';
 import { listadoServiciosPage } from '../pages/listadoServicios/listadoServicios';
 
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ServicesProvider } from '../providers/services/services';
 import { ENVIROMENT } from '../providers/constantes/constantes';
+import { editarServicioModal } from '../pages/editarServicio/editarServicio';
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { ENVIROMENT } from '../providers/constantes/constantes';
     crearPersonalPage,
     listadoPersonalPage,
     editarPersonalModal,
+    editarServicioModal,
     crearServiciosPage,
     listadoServiciosPage
   ],
@@ -70,6 +73,7 @@ import { ENVIROMENT } from '../providers/constantes/constantes';
     crearPersonalPage,
     listadoPersonalPage,
     editarPersonalModal,
+    editarServicioModal,
     crearServiciosPage,
     listadoServiciosPage
   ],

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, NavParams, ViewController } from 'ionic-angular';
 import { Utils } from '../../utils/utils';
 import { ServicesProvider } from '../../providers/services/services';
+import { Servicio } from '../../models/models';
+
 @Component({
   selector: 'page-editarServicio',
   templateUrl: 'editarServicio.html'

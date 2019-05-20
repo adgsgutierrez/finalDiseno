@@ -1,8 +1,10 @@
+import { asignacionPersonalPage } from './../agisnacionPersonal/asignacionPersonal';
+import { ListPage } from './../list/list';
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { Utils } from '../../utils/utils';
-import { userLogin } from '../../models/models';
+import { userLogin, userRegister } from '../../models/models';
 import { RegisterPage } from '../register/register';
 import { revisionPedidosPage } from '../revisionPedidos/revisionPedidos';
 import { ServicesProvider } from '../../providers/services/services';
@@ -37,7 +39,12 @@ export class LoginPage {
               }
             }
             if (flag) {
-              this.navCtrl.setRoot(revisionPedidosPage);
+              const user : userRegister = JSON.parse(sessionStorage.getItem("US"));
+              if(user.tipo =='A'){
+                this.navCtrl.setRoot(asignacionPersonalPage);
+              }else{
+                this.navCtrl.setRoot(ListPage);
+              }
             } else {
               const alert = this.alertCtrl.create({
                 title: 'Ups!',
